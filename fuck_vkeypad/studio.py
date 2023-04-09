@@ -29,7 +29,7 @@ def open_studio(img_path: str):
     coordinates = interpret_svg(svg_path)
     print("Press the key that corresponds on the keypad on image")
     for i, coordinate in enumerate(coordinates):
-        crop = img[coordinate[1]: coordinate[3], coordinate[0]: coordinate[2]]
+        crop = img[coordinate[1] : coordinate[3], coordinate[0] : coordinate[2]]
         cv2.imshow("crop", crop)
         key = chr(cv2.waitKey(0) % 256)
         print(f"Key: {key}")
