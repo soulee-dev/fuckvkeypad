@@ -33,5 +33,5 @@ def get_keypad_num_list(img, threshold: float):
 
 
 if __name__ == '__main__':
-    img = cv2.imread("test.png")
+    img = cv2.imread("v 1.png")
     print(get_keypad_num_list(img, 99))

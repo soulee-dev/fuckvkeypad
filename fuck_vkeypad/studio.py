@@ -1,5 +1,5 @@
 import cv2
-from svgpathtools import parse_path, svg2paths
+from svgpathtools import svg2paths
 import json
 
 
@@ -17,9 +17,7 @@ def interpret_svg(svg_path: str):
         x1, y1 = int(x_values[0]), int(y_values[0])
         x2, y2 = int(x_values[3]), int(y_values[3])
         coordinates.append((x1, y1, x2, y2))
-
-    coordinates.pop()
-    coordinates.pop()
+    coordinates = coordinates[2:]
     return coordinates
 
 
