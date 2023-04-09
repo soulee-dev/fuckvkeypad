@@ -2,9 +2,10 @@ import cv2
 from svgpathtools import parse_path, svg2paths
 import json
 
-def interpret_svg():
+
+def interpret_svg(svg_path: str):
     coordinates = []
-    paths, _ = svg2paths('test.svg')
+    paths, _ = svg2paths(svg_path)
 
     for path in paths:
         x_values = []
@@ -23,25 +24,26 @@ def interpret_svg():
 
 
 def open_studio(img_path: str):
-    boxes = {}
+    boxes = []
     assets = {}
     img = cv2.imread(img_path)
-    coordinates = interpret_svg()
+    svg_path = input("Enter the path to the svg file: ")
+    coordinates = interpret_svg(svg_path)
     print("Press the key that corresponds on the keypad on image")
     for i, coordinate in enumerate(coordinates):
         crop = img[coordinate[1]:coordinate[3], coordinate[0]:coordinate[2]]
         cv2.imshow("crop", crop)
         key = chr(cv2.waitKey(0) % 256)
-        print(f"key: {key}")
-        boxes[key] = coordinate
+        print(f"Key: {key}")
+        boxes.append(coordinate)
         assets[key] = f"assets/{i}.png"
         cv2.imwrite(f"assets/{i}.png", crop)
-
+    cv2.destroyAllWindows()
+    boxes.sort(key=lambda box: (box[1], box[0]))
     json_data = {
         "boxes": boxes,
         "assets": assets
     }
-    # save json data
     with open("data.json", "w") as f:
         json.dump(json_data, f)
 
@@ -49,3 +51,4 @@ def open_studio(img_path: str):
 if __name__ == "__main__":
     img_path = input("Enter the path to the image: ")
     open_studio(img_path)
+    print("Done!")
