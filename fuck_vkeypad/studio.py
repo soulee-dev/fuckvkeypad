@@ -29,7 +29,7 @@ def open_studio(img_path: str):
     coordinates = interpret_svg(svg_path)
     print("Press the key that corresponds on the keypad on image")
     for i, coordinate in enumerate(coordinates):
-        crop = img[coordinate[1]:coordinate[3], coordinate[0]:coordinate[2]]
+        crop = img[coordinate[1]: coordinate[3], coordinate[0]: coordinate[2]]
         cv2.imshow("crop", crop)
         key = chr(cv2.waitKey(0) % 256)
         print(f"Key: {key}")
@@ -38,10 +38,7 @@ def open_studio(img_path: str):
         cv2.imwrite(f"assets/{i}.png", crop)
     cv2.destroyAllWindows()
     boxes.sort(key=lambda box: (box[1], box[0]))
-    json_data = {
-        "boxes": boxes,
-        "assets": assets
-    }
+    json_data = {"boxes": boxes, "assets": assets}
     with open("data.json", "w") as f:
         json.dump(json_data, f)
 

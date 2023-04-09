@@ -21,7 +21,7 @@ def get_keypad_num_list(img, threshold: float):
     assets = data["assets"]
     keypad_num_list = []
     for box in boxes:
-        crop = img[box[1]:box[3], box[0]:box[2]]
+        crop = img[box[1] : box[3], box[0] : box[2]]
         for key, asset in assets.items():
             try:
                 diff = diff_img(crop, cv2.imread(asset))
@@ -32,6 +32,6 @@ def get_keypad_num_list(img, threshold: float):
     return keypad_num_list
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     img = cv2.imread("v 1.png")
     print(get_keypad_num_list(img, 99))
