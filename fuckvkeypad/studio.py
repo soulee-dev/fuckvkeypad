@@ -1,3 +1,4 @@
+import os
 import cv2
 import json
 import argparse
@@ -27,6 +28,8 @@ def open_studio(img_path: str, svg_path: str):
     img = cv2.imread(img_path)
     coordinates = interpret_svg(svg_path)
     print("Press the key that corresponds on the keypad on image")
+    if not os.path.exists("assets"):
+        os.makedirs("assets")
     for i, coordinate in enumerate(coordinates):
         crop = img[coordinate[1] : coordinate[3], coordinate[0] : coordinate[2]]
         cv2.imshow("crop", crop)
@@ -38,7 +41,7 @@ def open_studio(img_path: str, svg_path: str):
     cv2.destroyAllWindows()
     boxes.sort(key=lambda box: (box[1], box[0]))
     json_data = {"boxes": boxes, "assets": assets}
-    with open("../assets/data.json", "w") as f:
+    with open("data.json", "w") as f:
         json.dump(json_data, f, indent=4)
 
 
