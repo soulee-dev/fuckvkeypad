@@ -10,7 +10,7 @@ class FuckvKeypadTest(unittest.TestCase):
     def test_get_keymap(self):
         img = cv2.imread("assets/vKeypad.png")
         keymap = get_keypad_num_list(
-            img, asset_path="assets/", data_path="assets/data.json"
+            img, asset_path="test_assets/", data_path="test_assets/data.json"
         )
         self.assertEqual(keymap, ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"])
 
