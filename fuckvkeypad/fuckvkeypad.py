@@ -16,7 +16,7 @@ def diff_img(img1, img2):
 def get_keypad_num_list(
     img,
     asset_path: str,
-    data_path: str = "data.json",
+    data_path: str,
     threshold: float = 100,
     debug: bool = False,
 ):
