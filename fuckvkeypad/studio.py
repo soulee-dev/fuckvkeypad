@@ -33,12 +33,12 @@ def open_studio(img_path: str, svg_path: str):
         key = chr(cv2.waitKey(0))
         print(f"Key: {key}")
         boxes.append(coordinate)
-        assets[key] = f"assets/{i}.png"
+        assets[key] = f"{i}.png"
         cv2.imwrite(f"assets/{i}.png", crop)
     cv2.destroyAllWindows()
     boxes.sort(key=lambda box: (box[1], box[0]))
     json_data = {"boxes": boxes, "assets": assets}
-    with open("data.json", "w") as f:
+    with open("../assets/data.json", "w") as f:
         json.dump(json_data, f, indent=4)
 
 

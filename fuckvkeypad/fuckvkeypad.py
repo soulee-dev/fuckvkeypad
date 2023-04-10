@@ -13,28 +13,29 @@ def diff_img(img1, img2):
     return percentage
 
 
-def get_keypad_num_list(img, data_path: str = "data.json", threshold: float = 100):
+def get_keypad_num_list(img, asset_path: str, data_path: str = "data.json", threshold: float = 100, debug: bool = False):
     with open(data_path, "r") as f:
         data = json.load(f)
     boxes = data["boxes"]
     assets = data["assets"]
-    keypad_num_list = []
+    keymap = []
     for box in boxes:
         crop = img[box[1] : box[3], box[0] : box[2]]
         for key, asset in assets.items():
-            img_asset = cv2.imread(asset)
+            img_asset = cv2.imread(asset_path + asset)
             h1, w1 = crop.shape[:2]
-            h2, w2 = cv2.imread(asset).shape[:2]
+            h2, w2 = img_asset.shape[:2]
             if (h1 != h2) or (w1 != w2):
                 continue
             try:
                 diff = diff_img(crop, img_asset)
-                print(diff)
+                if debug:
+                    print(diff)
                 if diff >= threshold:
-                    keypad_num_list.append(key)
+                    keymap.append(key)
             except Exception as e:
                 print(e)
-    return keypad_num_list
+    return keymap
 
 
 if __name__ == "__main__":
