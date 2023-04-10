@@ -23,9 +23,15 @@ def get_keypad_num_list(img, threshold: float):
     for box in boxes:
         crop = img[box[1] : box[3], box[0] : box[2]]
         for key, asset in assets.items():
+            img_asset = cv2.imread(asset)
+            h1, w1 = crop.shape[:2]
+            h2, w2 = cv2.imread(asset).shape[:2]
+            if (h1 != h2) or (w1 != w2):
+                continue
             try:
-                diff = diff_img(crop, cv2.imread(asset))
-                if diff > threshold:
+                diff = diff_img(crop, img_asset)
+                print(diff)
+                if diff >= threshold:
                     keypad_num_list.append(key)
             except Exception as e:
                 print(e)
@@ -33,5 +39,5 @@ def get_keypad_num_list(img, threshold: float):
 
 
 if __name__ == "__main__":
-    img = cv2.imread("v 1.png")
-    print(get_keypad_num_list(img, 99))
+    img = cv2.imread("v.png")
+    print(get_keypad_num_list(img, threshold=100))

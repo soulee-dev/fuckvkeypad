@@ -31,7 +31,7 @@ def open_studio(img_path: str):
     for i, coordinate in enumerate(coordinates):
         crop = img[coordinate[1] : coordinate[3], coordinate[0] : coordinate[2]]
         cv2.imshow("crop", crop)
-        key = chr(cv2.waitKey(0) % 256)
+        key = chr(cv2.waitKey(0))
         print(f"Key: {key}")
         boxes.append(coordinate)
         assets[key] = f"assets/{i}.png"
