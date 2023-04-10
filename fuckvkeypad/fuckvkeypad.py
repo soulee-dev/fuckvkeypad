@@ -1,3 +1,4 @@
+import os
 import json
 import cv2
 import numpy as np
@@ -28,7 +29,7 @@ def get_keymap(
     for box in boxes:
         crop = img[box[1] : box[3], box[0] : box[2]]
         for key, asset in assets.items():
-            img_asset = cv2.imread(asset_path + asset)
+            img_asset = cv2.imread(os.path.join(asset_path, asset))
             h1, w1 = crop.shape[:2]
             h2, w2 = img_asset.shape[:2]
             if (h1 != h2) or (w1 != w2):
