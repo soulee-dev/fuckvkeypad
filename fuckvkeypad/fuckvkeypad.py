@@ -56,6 +56,19 @@ def main():
     )
     for key in keymap:
         print(key["key_code"], key["box"])
+        x_center = int((key["box"][0] + key["box"][2]) / 2)
+        y_center = int((key["box"][1] + key["box"][3]) / 2)
+        cv2.putText(
+            img,
+            key["key_code"],
+            (x_center, y_center),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            1,
+            (0, 0, 255),
+            2,
+        )
+    cv2.imshow("img", img)
+    cv2.waitKey(0)
 
 
 if __name__ == "__main__":
