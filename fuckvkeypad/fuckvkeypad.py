@@ -47,7 +47,7 @@ def get_keymap(
 def main():
     image_path = input("Enter image path: ")
     img = cv2.imread(image_path)
-    print(get_keymap(img, threshold=100))
+    print(get_keymap(img, threshold=100, asset_path="../test_assets/", data_path="../test_assets/data.json"))
 
 
 if __name__ == "__main__":
