@@ -9,7 +9,7 @@ jobs:
       OS: ubuntu-latest
       PYTHON: '3.9'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@master
     - name: Setup Python
       uses: actions/setup-python@master
       with:
@@ -20,4 +20,13 @@ jobs:
         pip install coverage
         coverage run -m unittest
     - name: Upload Coverage to Codecov
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        directory: ./coverage/reports/
+        env_vars: OS,PYTHON
+        fail_ci_if_error: true
+        files: ./coverage1.xml,./coverage2.xml,!./cache
+        flags: unittests
+        name: codecov-umbrella
+        verbose: true
