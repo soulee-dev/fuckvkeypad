@@ -10,7 +10,7 @@ def get_requires():
 
 setup(
     name="fuckvkeypad",
-    version="0.1.0",
+    version="0.2.0",
     description="Bypassing vKeyboard using OpenCV",
     author="Soul Lee",
     url="https://github.com/soulee-dev/fuckvkeypad",
