@@ -13,7 +13,7 @@ def diff_img(img1, img2):
     return percentage
 
 
-def get_keypad_num_list(img, threshold: float):
+def get_keypad_num_list(img, data_path: str, threshold: float = 100):
     # load json file
     with open("data.json", "r") as f:
         data = json.load(f)
@@ -39,5 +39,6 @@ def get_keypad_num_list(img, threshold: float):
 
 
 if __name__ == "__main__":
-    img = cv2.imread("v.png")
+    image_path = input("Enter image path: ")
+    img = cv2.imread(image_path)
     print(get_keypad_num_list(img, threshold=100))
