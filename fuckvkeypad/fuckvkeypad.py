@@ -39,7 +39,7 @@ def get_keymap(
                 if verbose:
                     print(f"{key}: {diff:.2f}")
                 if diff >= threshold:
-                    keymap.append({"key_code": key, "box": box})
+                    keymap.append({"key_code": int(key), "box": box})
             except Exception as e:
                 print(e)
     return keymap
@@ -60,15 +60,16 @@ def main():
         y_center = int((key["box"][1] + key["box"][3]) / 2)
         cv2.putText(
             img,
-            key["key_code"],
+            str(chr(key["key_code"] % 256)),
             (x_center, y_center),
             cv2.FONT_HERSHEY_SIMPLEX,
             1,
             (0, 0, 255),
             2,
         )
-    cv2.imshow("img", img)
-    cv2.waitKey(0)
+    cv2.imwrite("img2.png", img)
+    # cv2.imshow("img", img)
+    # cv2.waitKey(0)
 
 
 if __name__ == "__main__":

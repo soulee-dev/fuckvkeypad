@@ -15,16 +15,16 @@ class FuckvKeypadTest(unittest.TestCase):
         self.assertEqual(
             keymap,
             [
-                {"box": [0, 0, 55, 55], "key_code": "1"},
-                {"box": [58, 0, 113, 55], "key_code": "2"},
-                {"box": [116, 0, 171, 55], "key_code": "3"},
-                {"box": [0, 58, 55, 113], "key_code": "4"},
-                {"box": [58, 58, 113, 113], "key_code": "5"},
-                {"box": [116, 58, 171, 113], "key_code": "6"},
-                {"box": [0, 116, 55, 171], "key_code": "7"},
-                {"box": [58, 116, 113, 171], "key_code": "8"},
-                {"box": [116, 116, 171, 171], "key_code": "9"},
-                {"box": [58, 174, 113, 229], "key_code": "0"},
+                {"box": [0, 0, 55, 55], "key_code": 1},
+                {"box": [58, 0, 113, 55], "key_code": 2},
+                {"box": [116, 0, 171, 55], "key_code": 3},
+                {"box": [0, 58, 55, 113], "key_code": 4},
+                {"box": [58, 58, 113, 113], "key_code": 5},
+                {"box": [116, 58, 171, 113], "key_code": 6},
+                {"box": [0, 116, 55, 171], "key_code": 7},
+                {"box": [58, 116, 113, 171], "key_code": 8},
+                {"box": [116, 116, 171, 171], "key_code": 9},
+                {"box": [58, 174, 113, 229], "key_code": 0},
             ],
         )
 
