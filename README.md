@@ -5,10 +5,16 @@
 
 [![Lint](https://github.com/soulee-dev/FuckVkeyPad/actions/workflows/black.yml/badge.svg)](https://github.com/soulee-dev/FuckVkeyPad/actions/workflows/black.yml)
 [![codecov](https://codecov.io/gh/soulee-dev/FuckVkeyPad/branch/main/graph/badge.svg?token=V3MK4N5X5X)](https://codecov.io/gh/soulee-dev/FuckVkeyPad)
+
 # 가상키보드 우회
-
-# 작동 방법
+# 사용 방법
 ## Studio
-가상 키보드를 우회하기 위해서, 키보드의 키맵이 들어있는 data.json과 키보드 이미지가 담겨있는 aseets가 필요합니다.
+https://www.youtube.com/watch?v=4kE4m3oMGX8
 
-## fuck_vkeypad
+1. 가상키보드 이미지를 준비합니다
+2. Figma에서 가상 키보드 이미지를 업로드 합니다
+3. Figma에서 사각형으로 가상 키보드 각각의 키를 덮어줍니다
+4. Figma에서 svg 파일로 Export 합니다
+5. 터미널에서 ``vkeypad-studio [이미지 파일] [svg 파일]`` 을 입력합니다
+6. 새로 뜬 창에서, 이미지에 해당되는 키보드 키를 눌러줍니다
+7. assets 폴더 속 사진들과, data.json을 따로 보관 해둡니다
