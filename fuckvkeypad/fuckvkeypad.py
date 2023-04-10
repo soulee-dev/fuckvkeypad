@@ -38,7 +38,7 @@ def get_keymap(
                 if verbose:
                     print(f"{key}: {diff:.2f}")
                 if diff >= threshold:
-                    keymap.append(key)
+                    keymap.append({key: box})
             except Exception as e:
                 print(e)
     return keymap
