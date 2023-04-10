@@ -13,7 +13,13 @@ def diff_img(img1, img2):
     return percentage
 
 
-def get_keypad_num_list(img, asset_path: str, data_path: str = "data.json", threshold: float = 100, debug: bool = False):
+def get_keypad_num_list(
+    img,
+    asset_path: str,
+    data_path: str = "data.json",
+    threshold: float = 100,
+    debug: bool = False,
+):
     with open(data_path, "r") as f:
         data = json.load(f)
     boxes = data["boxes"]
