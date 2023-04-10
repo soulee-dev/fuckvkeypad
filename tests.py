@@ -8,7 +8,7 @@ class FuckvKeypadTest(unittest.TestCase):
         pass
 
     def test_get_keymap(self):
-        img = cv2.imread("assets/vKeypad.png")
+        img = cv2.imread("test_assets/vKeypad.png")
         keymap = get_keypad_num_list(
             img, asset_path="test_assets/", data_path="test_assets/data.json"
         )
