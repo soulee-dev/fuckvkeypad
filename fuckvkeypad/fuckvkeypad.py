@@ -18,7 +18,7 @@ def get_keymap(
     asset_path: str,
     data_path: str,
     threshold: float = 100,
-    debug: bool = False,
+    verbose: bool = False,
 ):
     with open(data_path, "r") as f:
         data = json.load(f)
@@ -35,8 +35,8 @@ def get_keymap(
                 continue
             try:
                 diff = diff_img(crop, img_asset)
-                if debug:
-                    print(diff)
+                if verbose:
+                    print(f"{key}: {diff:.2f}")
                 if diff >= threshold:
                     keymap.append(key)
             except Exception as e:
