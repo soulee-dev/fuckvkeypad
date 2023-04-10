@@ -7,6 +7,10 @@
 
 미리 캡쳐된 이미지와 유사도를 분석하는 방식으로 우회가 이루어집니다
 
+![vKeypad1](images/img1.png)
+![vKeypad2](images/img2.png)
+
+
 # 사용 방법
 ## vKeypad-Studio
 [사용 방법 영상 - YouTube](https://www.youtube.com/watch?v=4kE4m3oMGX8)
@@ -25,6 +29,7 @@ pip install fuckvkeypad
 ```
 
 ### 예제
+assets의 폴더 위치와, data.json 위치를 매개변수로 넘겨줍니다
 ```python
 import cv2
 from fuckvkeypad import get_keymap
@@ -37,19 +42,19 @@ keymap = get_keymap(
 print(keymap)
 ```
 
-인식된 키와 바운딩 박스의 좌표를 순서대로 출력합니다
+바운딩 박스의 좌표와 키코드를 순서대로 출력합니다
 ```python
 [
-  {"box": [0, 0, 55, 55], "key_code": 1},
-  {"box": [58, 0, 113, 55], "key_code": 2},
-  {"box": [116, 0, 171, 55], "key_code": 3},
-  {"box": [0, 58, 55, 113], "key_code": 4},
-  {"box": [58, 58, 113, 113], "key_code": 5},
-  {"box": [116, 58, 171, 113], "key_code": 6},
-  {"box": [0, 116, 55, 171], "key_code": 7},
-  {"box": [58, 116, 113, 171], "key_code": 8},
-  {"box": [116, 116, 171, 171], "key_code": 9},
-  {"box": [58, 174, 113, 229], "key_code": 0},
+  {"box": [0, 0, 55, 55], "key_code": 49},
+  {"box": [58, 0, 113, 55], "key_code": 50},
+  {"box": [116, 0, 171, 55], "key_code": 51},
+  {"box": [0, 58, 55, 113], "key_code": 52},
+  {"box": [58, 58, 113, 113], "key_code": 53},
+  {"box": [116, 58, 171, 113], "key_code": 54},
+  {"box": [0, 116, 55, 171], "key_code": 55},
+  {"box": [58, 116, 113, 171], "key_code": 56},
+  {"box": [116, 116, 171, 171], "key_code": 57},
+  {"box": [58, 174, 113, 229], "key_code": 48},
 ]
 ```
 
