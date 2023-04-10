@@ -43,4 +43,4 @@ print(keymap)
 ```
 
 # Special Thanks
-이 라이브러리는 [simple_bank_korea](https://github.com/Beomi/simple_bank_korea)에서 영감을 받아 제작하였습니다
+이 라이브러리는[simple_bank_korea](https://github.com/Beomi/simple_bank_korea)에서 영감을 받아 제작하였습니다
