@@ -19,6 +19,12 @@
 7. assets 폴더 속 사진들과, data.json을 따로 보관 해둡니다
 
 ## fuckvkeypad
+### 설치
+```
+pip install fuckvkeypad
+```
+
+### 예제
 ```python
 import cv2
 from fuckvkeypad import get_keymap
@@ -30,10 +36,11 @@ keymap = get_keymap(
 
 print(keymap)
 ```
+
+인식된 키를 순서대로 출력합니다
 ```shell
 > ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 ```
-
 
 # Special Thanks
 이 라이브러리는 [simple_bank_korea](https://github.com/Beomi/simple_bank_korea)에서 영감을 받아 제작하였습니다
