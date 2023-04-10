@@ -39,7 +39,7 @@ def get_keymap(
                 if verbose:
                     print(f"{key}: {diff:.2f}")
                 if diff >= threshold:
-                    keymap.append({key: box})
+                    keymap.append({"key_code": key, "box": box})
             except Exception as e:
                 print(e)
     return keymap
@@ -48,7 +48,14 @@ def get_keymap(
 def main():
     image_path = input("Enter image path: ")
     img = cv2.imread(image_path)
-    print(get_keymap(img, threshold=100, asset_path="../test_assets/", data_path="../test_assets/data.json"))
+    keymap = get_keymap(
+        img,
+        threshold=100,
+        asset_path="../test_assets",
+        data_path="../test_assets/data.json",
+    )
+    for key in keymap:
+        print(key["key_code"], key["box"])
 
 
 if __name__ == "__main__":
