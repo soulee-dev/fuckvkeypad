@@ -31,8 +31,9 @@ keymap = get_keymap(
 print(keymap)
 ```
 ```shell
-> ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"] 
+> ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 ```
+
 
 # Special Thanks
 이 라이브러리는 [simple_bank_korea](https://github.com/Beomi/simple_bank_korea)에서 영감을 받아 제작하였습니다
