@@ -1,1 +1,1 @@
-from .fuckvkeypad import get_keypad_num_list
+from .fuckvkeypad import get_keymap

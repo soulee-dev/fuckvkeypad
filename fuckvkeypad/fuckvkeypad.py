@@ -13,7 +13,7 @@ def diff_img(img1, img2):
     return percentage
 
 
-def get_keypad_num_list(
+def get_keymap(
     img,
     asset_path: str,
     data_path: str,
@@ -47,7 +47,7 @@ def get_keypad_num_list(
 def main():
     image_path = input("Enter image path: ")
     img = cv2.imread(image_path)
-    print(get_keypad_num_list(img, threshold=100))
+    print(get_keymap(img, threshold=100))
 
 
 if __name__ == "__main__":
