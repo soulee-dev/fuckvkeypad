@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/soulee-dev/FuckVkeyPad/branch/main/graph/badge.svg?token=V3MK4N5X5X)](https://codecov.io/gh/soulee-dev/FuckVkeyPad)
 ![PyPI](https://img.shields.io/pypi/v/fuckvkeypad)
 
-금융, 정부 웹사이트등에 널리 쓰이는 보안 프로그램인 가상키보드(vKeyboard)를 우회합니다
+금융, 정부 웹사이트등에 널리 쓰이는 보안 프로그램인 가상키보드(vKeypad)를 우회합니다
 
 미리 캡쳐된 이미지와 유사도를 분석하는 방식으로 우회가 이루어집니다
 
