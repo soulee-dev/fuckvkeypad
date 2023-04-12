@@ -4,16 +4,20 @@
 [![codecov](https://codecov.io/gh/soulee-dev/FuckVkeyPad/branch/main/graph/badge.svg?token=V3MK4N5X5X)](https://codecov.io/gh/soulee-dev/FuckVkeyPad)
 ![PyPI](https://img.shields.io/pypi/v/fuckvkeypad)
 
-금융, 정부 웹사이트등에 널리 쓰이는 보안 프로그램인 가상키보드(vKeypad)를 우회합니다
-
-미리 캡쳐된 이미지와 유사도를 분석하는 방식으로 우회가 이루어집니다
 
 ![vKeypad1](images/img1.png)
 ![vKeypad2](images/img2.png)
 
+금융, 정부 웹사이트등에 널리 쓰이는 보안 프로그램인 가상키보드(vKeypad)를 우회합니다
+
+**미리 각 키별 이미지를 저장해두고**, 저장한 이미지와의 유사도를 분석하는 방식으로 어떤 위치에 어떠한 키가 있는지 알수 있습니다
+
+**키 배열이 무작위로 바뀌는 경우에도 인식이 가능합니다**
 
 # 사용 방법
 ## vKeypad-Studio
+각 키별 이미지와, 키보드상 좌표를 추출하기 위해 vkeypad-studio를 이용합니다.
+
 [사용 방법 영상 - YouTube](https://www.youtube.com/watch?v=4kE4m3oMGX8)
 1. 가상키보드 이미지를 준비합니다
 2. Figma에서 가상 키보드 이미지를 업로드 합니다
