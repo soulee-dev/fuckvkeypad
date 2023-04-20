@@ -18,6 +18,8 @@
 ## vKeypad-Studio
 각 키별 이미지와, 키보드상 좌표를 추출하기 위해 vkeypad-studio를 이용합니다.
 
+이때 vkeypad-studio는 figma에서 그린 레이어의 위치를 분석해 이미지와, 좌표값을 저장해줍니다.
+
 [사용 방법 영상 - YouTube](https://www.youtube.com/watch?v=4kE4m3oMGX8)
 1. 가상키보드 이미지를 준비합니다
 2. Figma에서 가상 키보드 이미지를 업로드 합니다
